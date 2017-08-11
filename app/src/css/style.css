@@ -1,0 +1,183 @@
+html,body{
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+	background: #fff;
+	color: #808080;
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.floatLeft{
+	float: left;
+}
+
+.fullWidth{
+	width: 100%;
+}
+
+.fullHeight{
+	height: 100%;
+}
+
+.halfWidth{
+	width: 50%;
+}
+
+.loginContainer{
+	width: 320px;
+    height: 650px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+.loginContainerTopLayer{
+	height: 100px;
+}
+
+.loginContainerTopLayer h3{
+	font-size: 2.25em;
+}
+
+.loginContainerMiddleLayer{
+	height: calc(100% - 180px);
+	background: rgba(242, 242, 242, 0.8);
+}
+
+.roundedCorners{
+	border-radius: 4px;
+}
+
+.loginContainerBottomLayer{
+	padding-top: 50px;
+	padding-bottom: 50px;
+	height: 80px;
+}
+
+.loginContainerBottomLayer span{
+	font-size: 1.33em;
+}
+
+.loginContainerMiddleLayer_top{
+	height: 75px;
+	line-height: 75px;
+	border-bottom: 1px solid #ccc;
+}
+
+.loginContainerMiddleLayer_middle{
+	height: 320px;
+}
+
+.formContainer{
+	width: calc(100% - 50px);
+	margin: 0 auto;
+}
+
+.loginContainerMiddleLayer_bottom{
+	height: 100px;
+}
+
+.center{
+	text-align: center;
+}
+
+.loginContainerMiddleLayer_top span{
+	font-size: 1.55em;
+}
+
+.container{
+	width: calc(100% - 30px);
+	margin: 0 auto;
+}
+
+.inputFieldContainer{
+	height: 50px;
+	padding-top: 20px;
+}
+
+.buttonFieldContainer{
+	height: 80px;
+	line-height: 80px;
+}
+
+.buttonFieldContainer input{
+	width: 16px;
+    height: 16px;
+    position: relative;
+    top: 2px;
+}
+
+.noTopPadding{
+	padding-top: 0 !important;
+}
+
+.inputFieldContainer label, .buttonFieldContainer span, .loginContainerMiddleLayer_bottom a{
+	font-size: 1.15em;
+}
+
+.loginContainerMiddleLayer_bottom a{
+	text-decoration: underline;
+	color: #808080;
+}
+
+.inputField{
+	width: calc(100% - 18px);
+	padding-top: 7px;
+	padding-bottom: 7px;
+	padding-left: 8px;
+	padding-right: 8px;
+	border: 1px solid #e6e6e6;
+	outline: 0;
+	border-radius: 1px;
+	color: #808080;
+	margin-top: 7px;
+	font-size: 1.15em;
+}
+
+.passwordField{
+	width: calc(100% - 18px);
+	padding-left: 8px;
+	padding-right: 8px;
+	border: 1px solid #e6e6e6;
+	outline: 0;
+	border-radius: 1px;
+	color: #808080;
+	margin-top: 7px;
+	font-size: 2.2em !important;
+	letter-spacing: 2px;
+}
+
+.blue{
+	background: blue;
+}
+
+.yellow{
+	background: yellow;
+}
+
+.marginAuto{
+	margin: 0 auto;
+}
+
+.btn{
+	border-radius: 20px;
+	border: none;
+	background: #7dc705;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 200px;
+	font-size: 1.45em;
+	color: #fff;
+}
+
+.fullWidthBtn{
+	width: 100% !important;
+}
+
+.orange{
+	background: orange;
+}
+
+.purple{
+	background: purple;
+}
