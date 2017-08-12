@@ -19,7 +19,10 @@ import { POST, GET } from '../../functions/apiFunctions';
 import {
   LOADING_PROJECTS,
   LOADED_PROJECTS,
-  ERROR_LOADING_PROJECTS
+  ERROR_LOADING_PROJECTS,
+  LOADING_PROJECT_TIME,
+  LOADED_PROJECT_TIME,
+  ERROR_LOADING_PROJECT_TIME
 } from './constants';
 
 function setLoadingProjects(){
@@ -38,6 +41,25 @@ function setLoadedProjects(projects){
 function setErrorLoadingProjects(){
     return{
         type: ERROR_LOADING_PROJECTS
+    };
+}
+
+function setLoadingProjectTime(){
+    return{
+        type: LOADING_PROJECT_TIME
+    };
+}
+
+function setLoadedProjectTime(timeObject){
+    return{
+        type: LOADED_PROJECT_TIME,
+        timeObject: timeObject
+    };
+}
+
+function setErrorLoadingProjectTime(){
+    return{
+        type: ERROR_LOADING_PROJECT_TIME
     };
 }
 
@@ -67,4 +89,30 @@ export function getMyProjects(userID){
         });
 		
     }
+}
+
+export function getMyProjectsTime(taskID){
+    var getData = [];
+
+    return dispatch => {
+        dispatch(setLoadingProjectTime());
+
+        getData.push(
+            {
+                key: "taskID", 
+                value: taskID
+            }
+        );
+
+        GET("/api/getMyProjectsTime.php", getData)
+        .then(response => {
+            if(response.projectName !== null){
+                dispatch(setLoadedProjectTime(response));
+			}
+        }).catch(e => {
+            dispatch(setErrorLoadingProjectTime());
+        });
+		
+    }
+
 }

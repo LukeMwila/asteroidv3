@@ -41,7 +41,7 @@ export function GET(endPoint, getData){
 
         url = url + appendThis;
     }
-
+    console.log(url);
     result = fetch(url).then(function(response){
 
             return response.json();

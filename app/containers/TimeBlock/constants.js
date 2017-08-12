@@ -12,3 +12,6 @@
 export const LOADING_PROJECTS = 'asteroidv3/TimeBlock/LOADING_PROJECTS';
 export const LOADED_PROJECTS = 'asteroidv3/TimeBlock/LOADED_PROJECTS';
 export const ERROR_LOADING_PROJECTS = 'asteroidv3/TimeBlock/ERROR_LOADING_PROJECTS';
+export const LOADING_PROJECT_TIME = 'asteroidv3/TimeBlock/LOADING_PROJECT_TIME';
+export const LOADED_PROJECT_TIME = 'asteroidv3/TimeBlock/LOADED_PROJECT_TIME';
+export const ERROR_LOADING_PROJECT_TIME = 'asteroidv3/TimeBlock/ERROR_LOADING_PROJECT_TIME';

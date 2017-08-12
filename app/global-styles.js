@@ -601,7 +601,7 @@ nav {
     position: absolute;
     width: 50px;
     height: 50px;
-    top: 33px;
+    top: 25px;
     left: 7px;
     border-radius: 50%;
     animation: pulse 1s infinite;

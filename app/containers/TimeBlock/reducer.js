@@ -14,18 +14,24 @@ import { fromJS } from 'immutable';
 import {
   LOADING_PROJECTS,
   LOADED_PROJECTS,
-  ERROR_LOADING_PROJECTS
+  ERROR_LOADING_PROJECTS,
+  LOADING_PROJECT_TIME,
+  LOADED_PROJECT_TIME,
+  ERROR_LOADING_PROJECT_TIME
 } from './constants';
 
 // The initial state of the App
 const initialState = fromJS({
 	loadingProjects: false,
     userProjects: [],
-	errorLoadingProjects: false
+    errorLoadingProjects: false,
+    loadingProjectsTime: false,
+    timeObject: null,
+    errorLoadingTimeObject: false
 });
 
 function userProjectsReducer(state = initialState, action) {
-  switch(action.type){
+    switch(action.type){
         case LOADING_PROJECTS:
             state = {
                 ...state,
@@ -44,6 +50,26 @@ function userProjectsReducer(state = initialState, action) {
                 ...state,
                 loadingProjects: false,
                 errorLoadingProjects: true
+            }
+            break;
+        case LOADING_PROJECT_TIME:
+            state = {
+                ...state,
+                loadingProjectsTime: true
+            }
+            break;
+        case LOADED_PROJECT_TIME:
+            state = {
+                ...state,
+                loadingProjects: false,
+				timeObject: [action.timeObject]
+            }
+            break;
+        case ERROR_LOADING_PROJECT_TIME:
+            state = {
+                ...state,
+                loadingProjects: false,
+                errorLoadingTimeObject: true
             }
             break;
     }

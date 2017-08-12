@@ -11,6 +11,7 @@ import globalReducer from 'containers/App/reducer';
 import languageProviderReducer from 'containers/LanguageProvider/reducer';
 import teamReducer from 'containers/MyTeam/reducer';
 import userProjectsReducer from 'containers/TimeBlock/reducer';
+import updateProjectStatusReducer from 'containers/TimeWrapper/reducer';
 import dashboardChartReducer from 'containers/DashboardChart/reducer';
 import userInformationReducer from 'containers/Login/reducer';
 
@@ -52,6 +53,7 @@ export default function createReducer(asyncReducers) {
     language: languageProviderReducer,
     team: teamReducer,
     userProjects: userProjectsReducer,
+    timeWrapper: updateProjectStatusReducer,
     dashboardChart: dashboardChartReducer,
 	  userInformation: userInformationReducer,
     ...asyncReducers,
