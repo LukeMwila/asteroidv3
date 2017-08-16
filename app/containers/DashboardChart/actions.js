@@ -28,10 +28,11 @@ function setLoading(){
     };
 }
 
-function setLoadedChartData(chartData){
+function setLoadedChartData(chartData,totalProjects){
     return{
         type: LOADED_CHART_DATA,
-        chartData: chartData
+        chartData: chartData,
+        totalProjects: totalProjects
     };
 }
 
@@ -57,7 +58,10 @@ export function getChartData(userID){
         GET("/api/getMyProjectsForThisYear.php", getData)
         .then(response => {
             if(response !== null && Array.isArray(response)){
-                dispatch(setLoadedChartData(response));
+                var totalProjects = response.reduce((sum, project) => {
+                    return parseInt(sum) + parseInt(project);
+                }, 0);
+                dispatch(setLoadedChartData(response,totalProjects));
 			}else{
 				let emptyArray = [];
 				dispatch(setLoadedChartData(emptyArray));

@@ -20,7 +20,8 @@ import {
 // The initial state of the App
 const initialState = fromJS({
 	loadingChartData: false,
-	chartData: ["0","0","0","0","0","0","0","0","0","0","0","0"],
+    chartData: ["0","0","0","0","0","0","0","0","0","0","0","0"],
+    totalProjects: 0,
 	errorLoadingChartData: false
 });
 
@@ -36,7 +37,8 @@ function dashboardChartReducer(state = initialState, action) {
             state = {
                 ...state,
                 loadingChartData: false,
-				chartData: [action.chartData]
+                chartData: [action.chartData],
+                totalProjects: action.totalProjects
             }
             break;
         case ERROR:
