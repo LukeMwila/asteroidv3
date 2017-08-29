@@ -49,16 +49,12 @@ export function getTeam(userID, companyID){
 
         getData.push(
             {
-                key: "userID", 
-                value: userID
-            },
-            {
                 key: "companyID",
                 value: companyID
             }
         );
 
-        GET("/api/getMyTeam.php", getData)
+        GET("users", getData)
         .then(response => {
             if(response.length > 0){
                 dispatch(setLoadedTeam(response));

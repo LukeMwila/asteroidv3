@@ -15,19 +15,19 @@ class Tasks extends React.Component {
 		var tasks = this.props.projectsOnThisDay;
 
 		if (tasks != null){
-			
+
 			var display = tasks.map((task) => {
 				
-				return 	<div className="taskCard" key={task.project_id} >
+				return 	<div className="taskCard" key={task._id} >
 							<div className="taskCard__top floatLeft fullWidth curvedTopCorners">
-								<span className="uppercase">{task.client_name}:&nbsp;&nbsp;{task.project_name}</span>
+								<span className="uppercase">{task.client_id}:&nbsp;&nbsp;{task.project_name}</span>
 							</div>
 							<div className="taskCard__middle floatLeft fullWidth">
 								<p>{task.project_details}</p>
 							</div>
 							<div className="taskCard__bottom floatLeft fullWidth">
 								<div className="halfWidth floatLeft">
-									<span><i className="ion-ios-stopwatch"></i>&nbsp;&nbsp;&nbsp;&nbsp;{task.interpreted_time}</span>
+									<span><i className="ion-ios-stopwatch"></i>&nbsp;&nbsp;&nbsp;&nbsp;{task.time_spent_on_project}</span>
 								</div>
 								<div className="halfWidth floatLeft">
 									<button className="std-btn medium-btn"><i className="ion-eye"></i>&nbsp;&nbsp;&nbsp;&nbsp;View Details</button>

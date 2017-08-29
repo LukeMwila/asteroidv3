@@ -21,7 +21,7 @@ import {
 // The initial state of the App
 const initialState = fromJS({
   username: 'Ricardo Banda',
-  userID: 1,
+  userID: '599b51585846a74739e1c42a',
   companyID: 1,
   isLoading: false,
   isLoggedIn: false,

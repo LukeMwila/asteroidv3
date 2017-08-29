@@ -1,16 +1,16 @@
-const BASE_URL = 'http://localhost/project_management';
+const BASE_URL = 'http://localhost:3000/api/';
 var result;
 
 export function POST(endPoint, postedData){
     let url = BASE_URL + endPoint;
-    var formData = new FormData();
-    for(var i = 0; i < postedData.length; i++){
-        formData.append("'" + postedData[i].key + "'", postedData[i].value);
-    }
 
     result = fetch(url, {
             method: 'post',
-            body: formData
+            headers: {
+                'Accept': 'application/json, text/plain, */*',
+                'Content-Type': 'application/json'
+              },
+            body: JSON.stringify(postedData)
         }).then(function(response){
 
             return response.json();
@@ -30,18 +30,11 @@ export function POST(endPoint, postedData){
 
 export function GET(endPoint, getData){
     let url = BASE_URL + endPoint;
-    var appendThis;
-    for(var i = 0; i < getData.length; i++){
 
-        if(i === 0){
-            appendThis = "?" + getData[i].key + "=" + getData[i].value;
-        }else{
-            appendThis = "&" + getData[i].key + "=" + getData[i].value;
-        }
+    url += getData.map((data) => {
+        return '/' + data.value;
+    });
 
-        url = url + appendThis;
-    }
-    console.log(url);
     result = fetch(url).then(function(response){
 
             return response.json();

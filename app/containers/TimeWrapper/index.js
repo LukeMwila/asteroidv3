@@ -47,7 +47,7 @@ class TimeWrapper extends Component {
 
 		var self = this;
 
-		if (self.props.taskID > 0) {
+		if (self.props.taskID !== null && self.props.taskID !== undefined && self.props.taskID !== 0) {
 			
 			var _seconds = 0;
 			var _minutes = 0;

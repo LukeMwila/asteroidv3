@@ -76,7 +76,7 @@ export function getMyProjects(userID){
             }
         );
 
-        GET("/api/getMyProjects.php", getData)
+        GET("user-projects", getData)
         .then(response => {
             if(response.length > 0){
                 dispatch(setLoadedProjects(response));
@@ -103,8 +103,8 @@ export function getMyProjectsTime(taskID){
                 value: taskID
             }
         );
-
-        GET("/api/getMyProjectsTime.php", getData)
+        console.log("Here!!!!!!" + taskID)
+        GET("project-time", getData)
         .then(response => {
             if(response.projectName !== null){
                 dispatch(setLoadedProjectTime(response));

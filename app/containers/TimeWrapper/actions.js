@@ -37,43 +37,21 @@ function setUpdateError(){
 }
 
 export function updateProjectTime(taskID,days,hours,minutes,seconds,timeSpentToday,userID){
-    var getData = [];
 
     return dispatch => {
         dispatch(setUpdatePending());
 
-        getData.push(
-            {
-                key: "taskID", 
-                value: taskID
-            },
-            {
-                key: "days", 
-                value: days
-            },
-            {
-                key: "hours", 
-                value: hours
-            },
-            {
-                key: "minutes", 
-                value: minutes
-            },
-            {
-                key: "seconds", 
-                value: seconds
-            },
-            {
-                key: "timeSpentToday", 
-                value: timeSpentToday
-            },
-            {
-                key: "userID", 
-                value: userID
-            }
-        );
+        let postData = {
+            "_id" : taskID,
+            "days" : days,
+            "hours" : hours,
+            "minutes" : minutes,
+            "seconds" : seconds,
+            "timeSpentToday" : timeSpentToday,
+            "userID" : userID
+        }
 
-        GET("/api/updateMyProject.php", getData)
+        POST("update-project", postData)
         .then(response => {
             dispatch(setUpdateSuccessful());
         }).catch(e => {

@@ -17,20 +17,16 @@ class MyTeam extends React.Component{
 			
 			myTeam = myTeam[0].map((team_member) => {
 				
-				var profilePicture = {
-				  background: team_member.profile_picture
-				};
-				
-				return <div className="floatLeft fullWidth emp__container" key={team_member.user_id}>
+				return <div className="floatLeft fullWidth emp__container" key={team_member._id}>
 					<div className="floatLeft fullHeight emp__container_avatar ">
-						<div className="avatar_circle" style={{backgroundImage: `url(${team_member.profile_picture})`}} >
+						<div className="avatar_circle" style={{backgroundImage: `url(${"http://localhost/project_management/temp/"+team_member.profile_picture})`}} >
 							<div className="onlineStatus">
 								
 							</div>
 						</div>
 					</div>
 					<div className="floatLeft fullHeight emp__container_username" >
-						{team_member.full_name}
+						{team_member.first_name + " " + team_member.last_name}
 					</div>
 				</div>
 				
